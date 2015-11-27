@@ -1,0 +1,75 @@
+<div id="page-container">
+  <ul class="cb-slideshow">
+    <li><span><%= image_tag 'inicio/1-1.jpg' %></span></li>
+    <li><span><%= image_tag 'inicio/1-2.jpg' %></span></li>
+    <li><span><%= image_tag 'inicio/1-3.jpg' %></span></li>
+    <li><span><%= image_tag 'inicio/1-4.jpg' %></span></li>
+    <li><span><%= image_tag 'inicio/1-5.jpg' %></span></li>
+    <li><span><%= image_tag 'inicio/1-6.jpg' %></span></li>
+  </ul>
+</div>
+<div class="notransition black">
+<div class="modal fade" id="signin" name="sign" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="signLogo osLight"><span class="fa icon-compass"></span> Me Incomoda</div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="signinLabel">Acessar</h4>
+        <% if alert %>
+            <div class="alert alert-danger" role="alert"><%= alert %>
+              <a href="#" data-dismiss="alert" class="close">x</a>
+            </div>
+        <% end %>
+        <% if notice %>
+            <div class="alert alert-success" role="alert"><%= notice %>
+              <a href="#" data-dismiss="alert" class="close">x</a>
+            </div>
+        <% end %>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-group">
+              <div class="btn-group-justified">
+                <a href="index.html" class="btn btn-lg btn-facebook"><span class="fa fa-facebook pull-left"></span>Acessar com Facebook</a>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="btn-group-justified">
+                <a href="index.html" class="btn btn-lg btn-google"><span class="fa fa-google-plus pull-left"></span>Acessar com Google</a>
+              </div>
+            </div>
+            <div class="signOr">OU</div>
+            <div class="form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "off", placeholder: 'Senha', class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xs-6">
+                  <% if devise_mapping.rememberable? -%>
+                      <div class="field">
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me %>
+                      </div>
+                  <% end -%>
+                </div>
+                <div class="col-xs-6 align-right">
+                  <!--<p class="help-block"><a href="#" class="text-green">Esqueceu a senha?</a></p>-->
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+                <%= f.submit "Acessar", class: "btn-group-justified" %>
+            </div>
+            <p class="help-block">Nao tem conta? <%= link_to "Registrar", new_user_registration_path, method: 'get', class: 'text-green'%></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="signFooter">Me Incomoda - Todos os direitos reservados<br>&copy; 2015</div>
+  </div>
+</div>
+</div>

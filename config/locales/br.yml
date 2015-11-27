@@ -1,0 +1,158 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+br:
+  user: "Usuário"
+  users: "Usuários"
+  signed_oculto: "Seu usuário está inativo, requisite ao administrador de sua empresa para liberar."
+  limit_licence: "Suas licenças expiraram, entre em contato com o setor Comercial para adquirir mais licenças!"
+  password_incorrect: "Senha inválida!"
+  devise:
+    confirmations:
+      confirmed: "Sua conta foi confirmada com sucesso."
+      send_instructions: "Você receberá um e-mail com instruções sobre como confirmar a sua conta em alguns minutos."
+      send_paranoid_instructions: "Se o seu e-mail já existe na nossa base, você receberá um e-mail com as instruções sobre como confirmar a sua conta em alguns minutos..."
+    failure:
+      already_authenticated: "Você já está cadastrado."
+      inactive: "Sua conta ainda não está ativada."
+      invalid: "e-mail ou senha incorreto."
+      locked: "Sua conta está bloqueada."
+      last_attempt: "Você tem mais uma chance antes da sua conta ser bloqueada."
+      not_found_in_database: "Usuário inválido."
+      timeout: "Sua sessão expirou. Por favor entre novamente para continuar."
+      unauthenticated: "Você precisa fazer login ou registe-se antes de continuar."
+      unconfirmed: "Você precisa confirmar a sua conta para continuar."
+      session_limited: "Suas credenciais de login foram usados ​​em outro navegador. Faça login novamente para continuar neste browser."
+      expired: "Sua conta expirou devido à inatividade. Entre em contato com o administrador do site."
+    mailer:
+      confirmation_instructions:
+        subject: "Instruções de confirmação - YoungArts"
+      reset_password_instructions:
+        subject: "Instruções para redefinição de senha - YoungArts"
+      unlock_instructions:
+        subject: "Instruções para desbloqueio - YoungArts"
+    omniauth_callbacks:
+      failure: "Não foi possível autenticar-lo de %{kind} because \"%{reason}\"."
+      success: "Autenticação com sucesso %{kind} conta."
+    passwords:
+      no_token: "Você não pode acessar essa página sem vim de e-mail de redefinição de senha. se você vem de e-mail de redefinição de senha, por favor certifique-se de que você usou a URL completa fornecida."
+      send_instructions: "Você receberá um e-mail com as instruções para redefinição da sua senha em alguns minutos."
+      send_paranoid_instructions: "Se o seu e-mail já existe em nossa base, Você receberá um link para recuperação de senha no seu e-mail em alguns minutos."
+      updated: "Sua senha foi alterada com sucesso. Você agora está cadastrado."
+      updated_not_active: "Sua senha foi alterada com sucesso."
+    registrations:
+      destroyed: "Tchau! Sua conta foi cancelada com sucesso. Esperamos vê-lo em breve."
+      signed_up: "Bem vindo! Seu cadastro foi realizado com sucesso."
+      signed_up_but_inactive: "Seu cadastro foi realizado com sucesso. No entanto, Não foi possível loga-lo porque a sua conta ainda não foi ativada."
+      signed_up_but_locked: "Seu cadastro foi realizado com sucesso. No entanto, Não foi possível loga-lo porque sua conta está bloqueada."
+      signed_up_but_unconfirmed: "Uma menssagem com uma confirmação foi enviada para o seu e-mail. Siga os passos para utilização do sistema"
+      update_needs_confirmation: "Sua conta foi atualizada com sucesso, Mas nós precisamos verificar seu novo endereço de e-mail. Por favor verifique seu e-mail e clique no link para finalizar a confirmação do seu novo e-mail."
+      updated: "Sua conta foi atualizada com sucesso."
+    sessions:
+      signed_in: "Entrada com sucesso."
+      signed_out: "Sua saída foi realizada com sucesso."
+      signed_oculto: "Seu usuário está inativo, requisite ao administrador de sua empresa para liberar."
+      already_signed_out: "Já está deslogado."
+    unlocks:
+      send_instructions: "Você receberá um e-mail com as instruções para desbloquear a sua conta em alguns minutos."
+      send_paranoid_instructions: "Se a sua conta existe, Você receberá um e-mail com as instruções para desbloqueá-la em alguns minutos."
+      unlocked: "Sua conta foi desbloqueada com sucesso. Por favor entre para continuar."
+    invalid_captcha: "A entrada captcha não é válido!"
+  errors:
+      format: "%{attribute} %{message}"
+      template:
+        body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
+        header:
+          one: 'Não foi possível gravar %{model}: 1 erro'
+          other: 'Não foi possível gravar %{model}: %{count} erros.'
+      messages:
+        already_confirmed: "Já foi confimado, Por favor tente entrar"
+        confirmation_period_expired: "Precisa ser confirmado dentro %{period}, Por favor solicite um novo"
+        expired: "Expirou, Por favor solicite um novo"
+        not_found: "Não encontrado"
+        not_locked: "Não estava bloqueada"
+        not_saved:
+          one: "1 erro proibiu esse %{resource} de ser salvo:"
+          other: "%{count} erros proibiu esse %{resource} de ser salvo:"
+        accepted: deve ser aceito
+        blank: não pode ficar em branco
+        present: deve ficar em branco
+        confirmation: não é igual a %{attribute}
+        empty: não pode ficar vazio
+        equal_to: deve ser igual a %{count}
+        even: deve ser par
+        exclusion: não está disponível
+        greater_than: deve ser maior que %{count}
+        greater_than_or_equal_to: deve ser maior ou igual a %{count}
+        inclusion: não está incluído na lista
+        invalid: não é válido
+        less_than: deve ser menor que %{count}
+        less_than_or_equal_to: deve ser menor ou igual a %{count}
+        not_a_number: não é um número
+        not_an_integer: não é um número inteiro
+        odd: deve ser ímpar
+        record_invalid: 'A validação falhou: %{errors}'
+        restrict_dependent_destroy:
+          one: Não é possível excluir o registro pois existe um %{record} dependente
+          many: Não é possível excluir o registro pois existem %{record} dependentes
+        taken: já está em uso
+        too_long: 'é muito longo (máximo: %{count} caracteres)'
+        too_short: 'é muito curto (mínimo: %{count} caracteres)'
+        wrong_length: não possui o tamanho esperado (%{count} caracteres)
+        other_than: deve ser diferente de %{count}
+        taken_in_past: "já existe alguma conta!"
+        equal_to_current_password: "deve ser diferente da senha atual!"
+        password_format: "deve conter grandes, pequenas letras e algarismos"
+  activerecord:
+    attributes:
+      user:
+        password: "Senha"
+        current_password: "Senha Atual"
+        password_confirmation: "Confirmação de Senha"
+        remember_me: "Lembrar?"
+        name: "Nome"
+        characters_minimum: 'mínimo de caracteres'
+        update: "Atualizar"
+        cancel: "Cancelar"
+        admin_external: "Administrador Externo"
+        confirm: "Confirmar"
+        inativar_conta: "Inativar Conta"
+        name: "Nome"
+        last_name: "Sobrenome"
+        hide: "Ocultar"
+        notify: "Notificar"
+      company:
+        company_name: "Razão Social"
+        fantasy: "Fantasia"
+        license: "Licença"
+        available: "Disponível"
+      faq:
+        question: "Pergunta"
+        reply: "Resposta"
+        visible: "Visível"
+        disponible: "Disponível"
+    models:
+      user: "Usuário"
+  views:
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Proxima &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "Nenhum %{entry_name} encontrado"
+          one: "Exibindo <b>1</b> %{entry_name}"
+          other: "Exibindo <b>todos %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Exibindo %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> de <b>%{total}</b> no total."
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+      date: "%d/%m/%Y"
+      time: "%H:%M"
+  message:
+    new_message_notify: "Você tem uma nova mensagem de "
+    new_message: "Você tem uma nova mensagem!"
