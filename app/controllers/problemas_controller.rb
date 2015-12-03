@@ -7,6 +7,9 @@ class ProblemasController < ApplicationController
   # GET /problemas.json
   def index
     @problemas = Problema.all
+    #respond_to do |format|
+    #  format.json { render :json => @problemas}
+    #end
   end
 
   # GET /problemas/1
