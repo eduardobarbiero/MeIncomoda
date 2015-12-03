@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @problema.titulo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @problema.descricao %>
+</p>
+
+<p>
+  <strong>Classificacao:</strong>
+  <%= @problema.classificacao %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @problema.endereco %>
+</p>
+
+<p>
+  <strong>Imagem:</strong>
+  <%= @problema.imagem %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @problema.lat %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @problema.long %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @problema.user %>
+</p>
+
+<%= link_to 'Edit', edit_problema_path(@problema) %> |
+<%= link_to 'Back', problemas_path %>

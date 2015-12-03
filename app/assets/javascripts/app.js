@@ -1,6 +1,5 @@
 (function($) {
-    "use strict";
-
+    var images = [];
     // Custom options for map
     var options = {
             zoom : 14,
@@ -355,15 +354,17 @@
         });
 
         map.mapTypes.set('Styled', styledMapType);
-        map.setCenter(new google.maps.LatLng(40.6984237,-73.9890044));
+        //map.setCenter(new google.maps.LatLng(40.6984237,-73.9890044));
+        map.setCenter(new google.maps.LatLng(genericFunctions.getLatitude(), genericFunctions.getLongitude()));
         map.setZoom(14);
 
-        if ($('#address').length > 0) {
+        if ($('#problema_endereco').length > 0) {
             newMarker = new google.maps.Marker({
-                position: new google.maps.LatLng(40.6984237,-73.9890044),
+                //position: new google.maps.LatLng(40.6984237,-73.9890044),
+                position: new google.maps.LatLng(genericFunctions.getLatitude(), genericFunctions.getLongitude()),
                 map: map,
                 icon: new google.maps.MarkerImage( 
-                    'images/marker-new.png',
+                    '/assets/images/marker-new.png',
                     null,
                     null,
                     // new google.maps.Point(0,0),
@@ -377,8 +378,10 @@
             google.maps.event.addListener(newMarker, "mouseup", function(event) {
                 var latitude = this.position.lat();
                 var longitude = this.position.lng();
-                $('#latitude').text(this.position.lat());
-                $('#longitude').text(this.position.lng());
+                $('.latitude').text(this.position.lat());
+                $('.longitude').text(this.position.lng());
+                $('.lat').val(this.position.lat());
+                $('.long').val(this.position.lng());
             });
         }
 
@@ -668,8 +671,8 @@
     $('#datepicker').datepicker();
 
     // functionality for autocomplete address field
-    if ($('#address').length > 0) {
-        var address = document.getElementById('address');
+    if ($('#problema_endereco').length > 0) {
+        var address = document.getElementById('problema_endereco');
         var addressAuto = new google.maps.places.Autocomplete(address);
 
         google.maps.event.addListener(addressAuto, 'place_changed', function() {
@@ -685,8 +688,10 @@
             }
             newMarker.setPosition(place.geometry.location);
             newMarker.setVisible(true);
-            $('#latitude').text(newMarker.getPosition().lat());
-            $('#longitude').text(newMarker.getPosition().lng());
+            $('.latitude').text(newMarker.getPosition().lat());
+            $('.longitude').text(newMarker.getPosition().lng());
+            $('.lat').val(newMarker.getPosition().lat());
+            $('.long').val(newMarker.getPosition().lng());
 
             return false;
         });
@@ -694,4 +699,16 @@
 
     $('input, textarea').placeholder();
 
+    $("#problema_imagem").fileinput({
+        'previewFileType':'any',
+        language: "pt-BR"
+    });
+    /*$("#problema_imagem").on("filebatchselected", function(event, files) {
+     $.each(files, function(key, file) {
+        this.images.push(file)
+      });
+    });
+    $("#problema_imagem").on('filepredelete', function(event, data) {
+        alert("deleteou");
+    });*/
 })(jQuery);

@@ -14,6 +14,7 @@
       <div class="signLogo osLight"><span class="fa icon-compass"></span> Me Incomoda</div>
       <div class="modal-content">
         <div class="modal-header">
+
           <h4 class="modal-title" id="signinLabel">Acessar</h4>
           <% if alert %>
               <div class="alert alert-danger" role="alert"><%= alert %>
@@ -28,9 +29,10 @@
         </div>
         <div class="modal-body">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= devise_error_messages! %>
               <div class="form-group">
                 <%= f.label :name %><br />
-                <%= f.text_field :name, autofocus: true, placeholder: 'Senha', class: 'form-control', required: 'True' %>
+                <%= f.text_field :name, autofocus: true, placeholder: 'Nome/Sobrenome', class: 'form-control', required: 'True' %>
               </div>
               <div class="form-group">
                 <%= f.label :email %><br />

@@ -20,6 +20,7 @@
 //= require jquery.slimscroll.min
 //= require jquery.tagsinput.min
 //= require bootstrap-datepicker
+//= require fileinput.min
 //= require signin
 
 //= #require_tree .

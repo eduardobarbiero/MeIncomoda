@@ -16,6 +16,7 @@
  *= require datepicker
  *= require fullscreen-slider
  *= require bootstrap
+ *= require fileinput.min
  *= require app
  *= #require_tree .
  *= #require_self
