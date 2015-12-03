@@ -1,0 +1,3 @@
+<% @problemas.each do |problema| %>
+  $(".contain").append("<%= escape_javascript render 'problemas/partials/show', :problema => problema %>");
+<% end %>

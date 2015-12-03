@@ -1,0 +1,26 @@
+<% @problemas.each do |problema| %>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <a href="single.html" class="card">
+        <div class="figure">
+          <%= image_tag problema.imagem %>
+        </div>
+        <h2><%= problema.titulo %></h2>
+        <div class="cardAddress"><span class="icon-pointer"></span> <%= problema.endereco %></div>
+        <div class="cardRating<%= problema.id %>">
+          <script>adicionaEstrelas(<%= problema.classificacao %>, <%= problema.id %>)</script>
+        </div>
+        <ul class="cardFeat"></ul>
+        <div class="clearfix"></div>
+      </a>
+    </div>
+<% end %>
+  <!--<ul class="pagination">
+    <li class="disabled"><a href="#"><span class="fa fa-angle-left"></span></a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#"><span class="fa fa-angle-right"></span></a></li>
+  </ul>
+    -->

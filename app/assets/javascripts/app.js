@@ -53,7 +53,7 @@
         pixelOffset: new google.maps.Size(-101, -285),
         zIndex: null,
         boxStyle: {
-            background: "url('assets/images/infobox-bg.png') no-repeat",
+            background: "url('/assets/images/infobox-bg.png') no-repeat",
             opacity: 1,
             width: "202px",
             height: "245px"
@@ -73,7 +73,7 @@
                 position: latlng,
                 map: map,
                 icon: new google.maps.MarkerImage( 
-                    prop.imagem.imagem.url,
+                    '/assets/images/marker-blue.png',
                     null,
                     null,
                     null,
@@ -86,13 +86,12 @@
                                     '<div class="propImg">' +
                                         '<img src="' + prop.imagem.imagem.url + '">' +
                                         '<div class="propBg">' +
-                                            '<div class="propPrice">' + prop.titulo + '</div>' +
-                                            //'<div class="propType">' + prop.type + '</div>' +
+                                        '<div class="propPrice" title="' + prop.titulo + '">' + prop.titulo + '</div>' +
                                         '</div>' +
                                     '</div>' +
                                     '<div class="paWrapper">' +
-                                        '<div class="propTitle">' + prop.titulo + '</div>' +
-                                        '<div class="propAddress">' + prop.endereco + '</div>' +
+                                        '<div class="propTitle"  title="' + prop.titulo + '">' + prop.titulo + '</div>' +
+                                        '<div class="propAddress"  title="' + prop.endereco + '">' + prop.endereco + '</div>' +
                                     '</div>' +
                                     '<div class="propRating">' +
                                         '<span class="fa fa-star"></span>' +
@@ -108,8 +107,8 @@
                                     '</ul>' +
                                     '<div class="clearfix"></div>' +
                                     '<div class="infoButtons">' +
-                                        '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Close</a>' +
-                                        '<a href="single.html" class="btn btn-sm btn-round btn-green viewInfo">View</a>' +
+                                        '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Fechar</a>' +
+                                        '<a href="single.html" class="btn btn-sm btn-round btn-green viewInfo">Visualizar</a>' +
                                     '</div>' +
                                  '</div>';
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -220,7 +219,10 @@
         //map.setCenter(new google.maps.LatLng(40.6984237,-73.9890044));
         map.setCenter(new google.maps.LatLng(genericFunctions.getLatitude(), genericFunctions.getLongitude()));
         map.setZoom(14);
-
+        $('.latitude').text(genericFunctions.getLatitude());
+        $('.longitude').text(genericFunctions.getLongitude());
+        $('.lat').val(genericFunctions.getLatitude());
+        $('.long').val(genericFunctions.getLongitude());
         if ($('#problema_endereco').length > 0) {
             newMarker = new google.maps.Marker({
                 //position: new google.maps.LatLng(40.6984237,-73.9890044),
@@ -247,9 +249,8 @@
                 $('.long').val(this.position.lng());
             });
         }
-
         addMarkers(props, map);
-    }, 300);
+    }, 3000);
 
     if(!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
         $('body').addClass('no-touch');
@@ -574,4 +575,10 @@
     $("#problema_imagem").on('filepredelete', function(event, data) {
         alert("deleteou");
     });*/
+    $(document).on('click', '.problema_classificacao', function(e) {
+        $('#problema_classificacao').val($(e.target).html());
+        $('.value-classificacao').html($(e.target).html());
+
+    });
+
 })(jQuery);

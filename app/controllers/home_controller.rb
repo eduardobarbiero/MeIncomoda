@@ -5,10 +5,11 @@ class HomeController < ApplicationController
 
   def index
     @user = User.all
+    @problemas = Problema.all.order('created_at desc')
     respond_to do |format|
       format.html
+      format.js
       format.json
-      format.js { render 'problemas/partials/index' }
     end
   end
 end

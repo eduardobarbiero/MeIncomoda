@@ -19,5 +19,13 @@ var ready = function(){
         }
     }
 }
+function adicionaEstrelas (quantidade, id){
+    estrelas = '';
+    for(var i = 0; i < quantidade; i++)
+        estrelas += '<span class="fa fa-star"></span>';
+    for(var i = quantidade; i < 5; i++)
+        estrelas += '<span class="fa fa-star-o"></span>';
+    $(".cardRating" + id).html(estrelas);
+}
 $(document).ready(ready);
 $(document).on("page:load", ready);

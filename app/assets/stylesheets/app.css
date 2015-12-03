@@ -1405,6 +1405,16 @@ a.userHandler .counter {
     line-height: 16px;
     white-space: nowrap;
     overflow: hidden;
+
+
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
 }
 .propAddress {
     white-space: nowrap;
@@ -1412,6 +1422,16 @@ a.userHandler .counter {
     color: #999;
     font-size: 11px;
     line-height: 11px;
+
+
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
 }
 .propRating {
     padding: 2px 0 5px 10px;
@@ -5212,13 +5232,13 @@ blockquote {
         top: 50px;
         visibility: hidden;
         opacity: 0;
-        margin-left: -87%;
+        margin-left: -60%;
         -webkit-transition: all .2s ease-in-out;
         -o-transition: all .2s ease-in-out;
         transition: all .2s ease-in-out;
     }
     #leftSide.expanded {
-        width: 87%;
+        width: 60%;
         opacity: 1;
         visibility: visible;
         margin-left: 0;

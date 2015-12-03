@@ -7,9 +7,6 @@ class ProblemasController < ApplicationController
   # GET /problemas.json
   def index
     @problemas = Problema.all
-    #respond_to do |format|
-    #  format.json { render :json => @problemas}
-    #end
   end
 
   # GET /problemas/1
@@ -35,7 +32,7 @@ class ProblemasController < ApplicationController
 
     respond_to do |format|
       if @problema.save
-        format.html { redirect_to @problema, notice: 'Problema was successfully created.' }
+        format.html { redirect_to home_index_path, notice: 'Problema was successfully created.' }
         format.json { render :show, status: :created, location: @problema }
       else
         format.html { render :new }

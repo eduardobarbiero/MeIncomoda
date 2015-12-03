@@ -21,6 +21,8 @@
 //= require jquery.tagsinput.min
 //= require bootstrap-datepicker
 //= require fileinput.min
+//= require location
 //= require signin
+//= require init
 
 //= #require_tree .

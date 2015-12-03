@@ -28,6 +28,8 @@
       </div>
   <% end %>
 <% end %>
+
+<% if signed_in?%>
 <div class="notransition">
   <div id="header">
     <div class="logo">
@@ -41,6 +43,7 @@
     <div class="headerUserWraper">
       <a href="#" class="userHandler dropdown-toggle" data-toggle="dropdown"><span class="icon-user"></span><span class="counter">5</span></a>
       <a href="#" class="headerUser dropdown-toggle" data-toggle="dropdown">
+
         <%= image_tag 'avatar-1.png', class: 'avatar headerAvatar pull-left', alt: 'avatar' %>
         <div class="userTop pull-left">
           <span class="headerUserName"><%= current_user.name %></span><span class="fa fa-angle-down"></span>
@@ -77,7 +80,7 @@
         <ul class="notifyList">
           <li>
             <a href="#">
-              <img class="avatar pull-left" src="assets/images/avatar-1.jpg" alt="avatar">
+              <%= image_tag 'avatar-1.png', class: 'avatar pull-left', alt: 'avatar' %>
               <div class="pulse border-grey"></div>
               <div class="notify pull-left">
                 <div class="notifyName">Sed ut perspiciatis unde</div>
@@ -131,11 +134,6 @@
 
   <div id="leftSide">
     <nav class="leftNav scrollable">
-      <div class="search">
-        <span class="searchIcon icon-magnifier"></span>
-        <input type="text" placeholder="Procurar por problemas...">
-        <div class="clearfix"></div>
-      </div>
       <ul>
         <li>
           <%= link_to content_tag(:span, '', class: 'navIcon icon-plus' ) + content_tag(:span, 'Novo', class: 'navLabel' ), new_problema_path, method: 'get' %>
@@ -154,13 +152,19 @@
       </ul>
     </nav>
   </div>
-  <div class="closeLeftSide"></div>
+  <div class="closeLeftSide" style="display: none;"></div>
   <%= yield %>
 </div>
 </body>
+<% else %>
+  <body  class="notransition">
+    <%= yield %>
+  </body>
+<% end %>
 <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDof2nyTF4EdM7UzYT1ISsZa2bc5VUms6s"></script>-->
-<%= javascript_include_tag 'location' %>
-<%= javascript_include_tag 'init' %>
+<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=geometry&amp;libraries=places" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp" type="text/javascript"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDof2nyTF4EdM7UzYT1ISsZa2bc5VUms6s&callback=initMap"></script>-->
 <script src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=geometry&amp;libraries=places" type="text/javascript"></script>
 <%= javascript_include_tag 'infobox' %>
 <%= javascript_include_tag 'app' %>
