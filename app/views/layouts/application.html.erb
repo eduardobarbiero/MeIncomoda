@@ -18,6 +18,7 @@
 </head>
 <body  class="notransition">
 <% if signed_in?%>
+  <div class="flash">
   <% if alert %>
       <br><br><br>
       <div class="alert alert-danger" role="alert" style="padding: 15px 15px 15px 86px; margin-bottom: -59px; margin-top: 50px;"><%= alert %>
@@ -29,6 +30,7 @@
         <a href="#" data-dismiss="alert" class="close">x</a>
       </div>
   <% end %>
+  </div>
 <% end %>
 
 <% if signed_in?%>
@@ -167,7 +169,7 @@
 <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=geometry&amp;libraries=places" type="text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp" type="text/javascript"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDof2nyTF4EdM7UzYT1ISsZa2bc5VUms6s&callback=initMap"></script>-->
-<script src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=geometry&amp;libraries=places" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=geometry&amp;libraries=places" type="text/javascript"></script>
 <%= javascript_include_tag 'infobox' %>
 <%= javascript_include_tag 'app' %>
 </html>

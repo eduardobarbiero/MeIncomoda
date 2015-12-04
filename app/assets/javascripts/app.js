@@ -585,4 +585,10 @@
       genericFunctions.getAddress();
     });
 
+    $(document).ready(function(){
+        setTimeout(function(){
+            $('.flash').remove();
+        }, 7000);
+    })
+
 })(jQuery);
