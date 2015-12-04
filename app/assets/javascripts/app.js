@@ -94,11 +94,11 @@
                                         '<div class="propAddress"  title="' + prop.endereco + '">' + prop.endereco + '</div>' +
                                     '</div>' +
                                     '<div class="propRating">' +
-                                        '<span class="fa fa-star"></span>' +
-                                        '<span class="fa fa-star"></span>' +
-                                        '<span class="fa fa-star"></span>' +
-                                        '<span class="fa fa-star"></span>' +
-                                        '<span class="fa fa-star-o"></span>' +
+                                        '<span class="fa fa-star' + (!(prop.classificacao >= 1) ? '-o' :'') + '"></span>' +
+                                        '<span class="fa fa-star' + (!(prop.classificacao >= 2) ? '-o' :'') + '"></span>' +
+                                        '<span class="fa fa-star' + (!(prop.classificacao >= 3) ? '-o' :'') + '"></span>' +
+                                        '<span class="fa fa-star' + (!(prop.classificacao >= 4) ? '-o' :'') + '"></span>' +
+                                        '<span class="fa fa-star' + (!(prop.classificacao >= 5) ? '-o' :'') + '"></span>' +
                                     '</div>' +
                                     '<ul class="propFeat">' +
                                         /*'<li><span class="fa fa-moon-o"></span> ' + prop.bedrooms + '</li>' +
@@ -579,6 +579,10 @@
         $('#problema_classificacao').val($(e.target).html());
         $('.value-classificacao').html($(e.target).html());
 
+    });
+
+    $(document).on('submit', '.new_problema', function(e) {
+      genericFunctions.getAddress();
     });
 
 })(jQuery);

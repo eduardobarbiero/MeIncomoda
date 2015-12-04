@@ -16,6 +16,20 @@ var ready = function(){
         },
         getLongitude: function(){
             return this.longitude;
+        },
+
+        getAddress: function () {
+          var latlng = new google.maps.LatLng(latitude, longitude);
+          var geocoder = geocoder = new google.maps.Geocoder();
+          alert('chegou aqui');
+          geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+              alert(results[1].formatted_address);
+              //if (status == google.maps.GeocoderStatus.OK) {
+                  if (results[1]) {
+                      alert("Location: " + results[1].formatted_address);
+                  }
+              //}
+          });
         }
     }
 }
@@ -25,7 +39,7 @@ function adicionaEstrelas (quantidade, id){
         estrelas += '<span class="fa fa-star"></span>';
     for(var i = quantidade; i < 5; i++)
         estrelas += '<span class="fa fa-star-o"></span>';
-    $(".cardRating" + id).html(estrelas);
+    $(".cardRating[data-id='" + id + "']").html(estrelas);
 }
 $(document).ready(ready);
 $(document).on("page:load", ready);

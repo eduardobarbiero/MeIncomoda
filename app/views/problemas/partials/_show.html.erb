@@ -6,7 +6,7 @@
         </div>
         <h2><%= problema.titulo %></h2>
         <div class="cardAddress"><span class="icon-pointer"></span> <%= problema.endereco %></div>
-        <div class="cardRating<%= problema.id %>">
+        <div class="cardRating" data-id="<%= problema.id %>">
           <script>adicionaEstrelas(<%= problema.classificacao %>, <%= problema.id %>)</script>
         </div>
         <ul class="cardFeat"></ul>
