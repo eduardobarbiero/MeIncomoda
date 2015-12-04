@@ -108,7 +108,7 @@
                                     '<div class="clearfix"></div>' +
                                     '<div class="infoButtons">' +
                                         '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Fechar</a>' +
-                                        '<a href="single.html" class="btn btn-sm btn-round btn-green viewInfo">Visualizar</a>' +
+                                        '<a href="#" class="btn btn-sm btn-round btn-green viewInfo">Visualizar</a>' +
                                     '</div>' +
                                  '</div>';
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -117,10 +117,6 @@
                     infobox.open(map, marker);
                 }
             })(marker, i));
-
-            $(document).on('click', '.closeInfo', function() {
-                infobox.open(null,null);
-            });
 
             markers.push(marker);
         });
@@ -585,6 +581,10 @@
       genericFunctions.getAddress();
     });
 
+    $(document).on('click touchstart', '.closeInfo', function(e) {
+        infobox.open(null,null);
+    });
+    
     $(document).ready(function(){
         setTimeout(function(){
             $('.flash').remove();
