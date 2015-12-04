@@ -561,7 +561,8 @@
 
     $("#problema_imagem").fileinput({
         'previewFileType':'any',
-        language: "pt-BR"
+        language: "pt-BR",
+        allowedFileExtensions: ["jpg", "png", "gif"]
     });
     /*$("#problema_imagem").on("filebatchselected", function(event, files) {
      $.each(files, function(key, file) {
@@ -584,7 +585,7 @@
     $(document).on('click touchstart', '.closeInfo', function(e) {
         infobox.open(null,null);
     });
-    
+
     $(document).ready(function(){
         setTimeout(function(){
             $('.flash').remove();
