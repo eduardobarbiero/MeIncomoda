@@ -14,6 +14,7 @@
 //= require jquery-ui.min
 //= require jquery-ui-touch-punch
 //= require jquery.placeholder
+//= require jquery_ujs
 //= require bootstrap
 //= require jquery.touchSwipe.min
 //= require jquery.visible

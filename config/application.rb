@@ -16,6 +16,7 @@ module MeIncomoda
     config.active_record.default_timezone = :local
     config.encoding = "utf-8"
     config.active_record.raise_in_transactional_callbacks = true
+
     config.assets.precompile += %w( app.css )
     config.assets.precompile += %w( infobox.js )
     config.assets.precompile += %w( location.js )
