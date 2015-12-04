@@ -15,16 +15,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="signinLabel">Acessar</h4>
-        <% if alert %>
-            <div class="alert alert-danger" role="alert"><%= alert %>
-              <a href="#" data-dismiss="alert" class="close">x</a>
-            </div>
-        <% end %>
-        <% if notice %>
-            <div class="alert alert-success" role="alert"><%= notice %>
-              <a href="#" data-dismiss="alert" class="close">x</a>
-            </div>
-        <% end %>
+        <div class="flash">
+          <% if alert %>
+              <div class="alert alert-danger" role="alert"><%= alert %>
+                <a href="#" data-dismiss="alert" class="close">x</a>
+              </div>
+          <% end %>
+          <% if notice %>
+              <div class="alert alert-success" role="alert"><%= notice %>
+                <a href="#" data-dismiss="alert" class="close">x</a>
+              </div>
+          <% end %>
+        </div>
       </div>
       <div class="modal-body">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

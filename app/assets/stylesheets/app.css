@@ -4075,6 +4075,7 @@ body.black {
 .signOr {
     padding-bottom: 10px;
     text-align: center;
+    padding-top: 10px;
 }
 .signFooter {
     font-size: 11px;
