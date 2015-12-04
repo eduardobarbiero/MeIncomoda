@@ -32,7 +32,7 @@ class ProblemasController < ApplicationController
 
     respond_to do |format|
       if @problema.save
-        format.html { redirect_to home_index_path, notice: 'Problema was successfully created.' }
+        format.html { redirect_to home_index_path, notice: 'Problema foi criado com sucesso!' }
         format.json { render :show, status: :created, location: @problema }
       else
         format.html { render :new }
