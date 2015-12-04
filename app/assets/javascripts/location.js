@@ -21,12 +21,11 @@ var ready = function(){
         getAddress: function () {
           var latlng = new google.maps.LatLng(latitude, longitude);
           var geocoder = geocoder = new google.maps.Geocoder();
-          alert('chegou aqui');
           geocoder.geocode({ 'latLng': latlng }, function (results, status) {
               alert(results[1].formatted_address);
               //if (status == google.maps.GeocoderStatus.OK) {
                   if (results[1]) {
-                      alert("Location: " + results[1].formatted_address);
+                      //alert("Location: " + results[1].formatted_address);
                   }
               //}
           });
