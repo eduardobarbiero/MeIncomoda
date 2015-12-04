@@ -562,7 +562,7 @@
     $("#problema_imagem").fileinput({
         'previewFileType':'any',
         language: "pt-BR",
-        allowedFileExtensions: ["jpg", "png", "gif"]
+        allowedFileExtensions: ["jpg", "png", "gif", "jpeg"]
     });
     /*$("#problema_imagem").on("filebatchselected", function(event, files) {
      $.each(files, function(key, file) {
